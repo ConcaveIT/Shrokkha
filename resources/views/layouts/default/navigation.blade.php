@@ -25,21 +25,23 @@
                             <a href="{{url('/')}}">Home</a>
         
                         </li>
-                        <li><a href="{{route('about')}}">About</a></li>
+                        <li><a href="{{route('about')}}">About Us</a></li>
                         <li><a href="{{route('what-we-do')}}">What We Do</a></li>
+                        <li><a href="#">Team</a></li>
                         
-                        <li><a href="{{route('donation')}}">Donation</a></li>
-                        <li><a href="{{url('/')}}/posts">Event</a></li>
+                        {{-- <li><a href="{{route('donation')}}">Donation</a></li> --}}
+                        
                         <li class="menu-item-has-children">
                             <a href="#">Media</a>
                             <ul class="sub-menu">
-                                <li><a href="{{ route('full.gallery') }}">Gellery</a></li>
-                                <li><a href="donate.html">Donate</a></li>
-                                <li><a href="volunteer.html">Volunteer</a></li>
-                                <li><a href="{{ route('governing.body') }}">Governing Body</a></li>
+                                <li><a href="{{url('/')}}/posts">News</a></li>
+                                <li><a href="{{ route('full.gallery') }}">Photos</a></li>
+                                <li><a href="#">Views</a></li>
+                                {{-- <li><a href="{{ route('governing.body') }}">Governing Body</a></li> --}}
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html"> <span class="btn btn-success site_btn donate_btn">Donate Now</span> </a></li>
                     </ul>
                 </div><!-- end of nav-collapse -->
             </div><!-- end of container -->

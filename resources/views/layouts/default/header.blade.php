@@ -45,34 +45,8 @@
     <!-- end preloader -->
     <!-- Start header -->
     <header id="header" class="wpo-site-header wpo-header-style-2">
-        <div class="topbar">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-md-6 col-sm-7 col-12">
-                        <div class="contact-intro">
-                            <ul>
-                                <li><i class="fi flaticon-call"></i>+8801784-507278</li>
-                                <li><i class="fi flaticon-envelope"></i>info@shasthoshurokkha.org</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col col-md-6 col-sm-5 col-12">
-                        <div class="contact-info">
-                            <ul>
-                                <li><a href="{{url('/user/login')}}">Login</a></li>
-                                <li><a href="{{url('/user/register')}}">Sign Up</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        <!-- end topbar -->
-       <!--navigation start-->
        @include('layouts.default.navigation')
-       <!--navigation end-->
     </header>
-    <!-- end of header -->
 
 
 	

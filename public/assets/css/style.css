@@ -7208,7 +7208,7 @@ padding-bottom: 15px;
     margin-top: 15px;
 }
 .read_m2{
-    background: #f7c33f !important;
+    background: #0070a6 !important;
 }
 .what_we_do, .donation{
     margin-top: -30px;
@@ -7253,4 +7253,28 @@ padding-top: 50px;
 }
 .donation {
     margin-bottom: 50px;
+}
+
+.site_btn{
+    background: #0070a6 !important;
+}
+
+.donate_btn{
+    margin-top: -8px;
+}
+
+.my_custom_slider .slide {
+    height: 445px;
+    background: #ffff !important;
+}
+
+.my_custom_slider {
+    height: 445px;
+    background: #ffff !important;
+}
+.my_custom_slider .slide:before {
+    background-color: rgb(0 112 166) !important;
+}
+.my_custom_slider h2, .my_custom_slider p{
+    color:#fff;
 }
