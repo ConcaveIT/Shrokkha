@@ -36,11 +36,11 @@
                             <ul class="sub-menu">
                                 <li><a href="{{url('/')}}/news">News</a></li>
                                 <li><a href="{{ route('full.gallery') }}">Photos</a></li>
-                                <li><a href="#">Videos</a></li>
+                                <li><a href="{{ route('video') }}">Videos</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="contact.html"> <span class="btn btn-success site_btn donate_btn">Donate Now</span> </a></li>
+                        <li><a href="{{route('contact.page')}}">Contact</a></li>
+                        <li><a href="#"> <span class="btn btn-success site_btn donate_btn">Donate Now</span> </a></li>
                     </ul>
                 </div><!-- end of nav-collapse -->
             </div><!-- end of container -->

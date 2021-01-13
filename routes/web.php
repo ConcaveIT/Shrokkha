@@ -95,16 +95,12 @@ Route::get('getmedicine/{id}','CitController@getMedicineById');
 Route::get('event/single/{id}','VmslController@event_single')->name('event.single');
 Route::get('causes/single/{id}','VmslController@causes_single')->name('causes.single');
 Route::get('volunteer/single/{id}','VmslController@volunteer_single')->name('volunteer.single');
-
-Route::get('contact','VmslController@contact_page')->name('contact.page');
 Route::post('contactform','VmslController@contact_data')->name('contact.data');
 Route::post('sendmail','VmslController@contact_email')->name('contact.email');
 Route::post('account','VmslController@volunteer_account')->name('volunteer.create.account');
-
 Route::get('volunteer','VmslController@grid_volunteer')->name('grid.volunteer');
 Route::get('event','VmslController@grid_event')->name('grid.event');
 Route::get('causes','VmslController@grid_causes')->name('grid.causes');
-
 Route::get('career','VmslController@career')->name('career');
 Route::get('career/circular/{id}','VmslController@circular')->name('circular');
 
@@ -115,8 +111,10 @@ Route::get('about','VmslController@about')->name('about');
 Route::get('what-we-do','VmslController@whatwedo')->name('what-we-do');
 Route::get('team','VmslController@team')->name('team');
 Route::get('donation','VmslController@donation')->name('donation');
-Route::get('gallery','VmslController@gallary')->name('full.gallery');
+Route::get('photos','VmslController@gallary')->name('full.gallery');
 Route::post('user-details', 'VmslController@user_details');
 Route::get('news', 'VmslController@news');
+Route::get('videos','VmslController@video')->name('video');
+Route::get('contact','VmslController@contact_page')->name('contact.page');
 
 

@@ -5405,7 +5405,7 @@ breadcumb-style
 }
 
 .info-item h2 {
-    font-size: 24px;
+    font-size: 20px;
     color: #242f6c;
     font-weight: 500;
     margin-top: 0;
@@ -7669,5 +7669,53 @@ display: none;
 }
 .newspage{
     height: 120px !important;
+    margin-bottom: 0;
+}
+.video_page .wpo-about-video-item {
+    margin-bottom: 50px;
+}
+.next-btn, .previous-btn{
+    background: #0070a6 !important;
+    padding: 5px 10px 5px 10px;
+    /* font-size: 12px !important; */
+    margin-top: 5px;
+    color: #fff;
+    border-radius: 3px;    
+    display: inline-block;
+}
+.next-btn a, .previous-btn a{
+    color: #fff;   
+}
+.pddig_botm{
+    padding-bottom: 60px;
+}
+.photos{
+    margin-bottom: 0 !important;
+}
+.photo_filter{
+    padding-top:60px;
+    text-align: center;
 }
 
+.photo_filter ul{
+    display: inline-flex;
+}
+.photo_filter ul li{
+    margin-right: 15px;
+}
+
+
+
+.wpo-breadcumb-area {
+    background: url(../images/breadcumb/img-1.jpg) no-repeat center top / cover;
+    min-height: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.info-item {
+    min-height: 280px;
+}

@@ -279,7 +279,11 @@ class VmslController extends Controller{
       return view('layouts.default.template.news', $data); 
     }
 
-    
+    public function video(){
+      $data['title'] = 'Video';
+      $data['setting'] = Websitesettings::where('id', 1)->first();
+      return view('layouts.default.template.video', $data); 
+    }
 
     
 

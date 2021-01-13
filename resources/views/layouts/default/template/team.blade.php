@@ -20,7 +20,7 @@
   </div>
 <!--modal end-->
 
-<div class="wpo-team-area-2">
+<div class="pddig_botm">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -64,7 +64,7 @@
 
 
 
-<div class="wpo-team-area-2">
+<div class="">
     <div class="container">
         <div class="row">
             <div class="col-12">

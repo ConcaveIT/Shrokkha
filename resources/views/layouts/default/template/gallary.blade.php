@@ -1,107 +1,158 @@
 @include('layouts.default.header')
-<section class="hidden_section"></div>
+<section class="hidden_section newspage photos"></div>
+  
+<style>
+*{padding:0;margin:0;text-decoration:none;list-style-type:none;font-family:'roboto', sans-serif;}
+::selection{color:#fff;background-color:#ff6666;}
+h2{margin-top:10px;color:#fff;text-align:center;letter-spacing:1px;}
+p{color:#fff;text-align:center;}
+.wrap-box{width:100%;height:auto;}
+.gallery{display:inline-block;width:auto;height:auto;margin:70px 100px;}
+.image-thumbnail{display:inline-block;width:auto;height:auto;background-color:#eee;margin:5px 4px;padding:5px;cursor:pointer;box-shadow:3px 2px 5px #444;transition:300ms ease;}
+.image-thumbnail img{display:block;width:360px;height:200px;}
+.gallery:hover .image-thumbnail:not(:hover){filter:blur(2px) grayscale(1);opacity:0.7;transform:scale(0.9);}
+/*        Light Box Styling             */
+.light-box{z-index: 99;position:fixed;top:0;left:0;visibility:hidden;opacity:0;width:100%;height:100%;background-color:rgba(72,73,74,0.7);transition:500ms ease;}
+.light-box:target{visibility:visible;opacity:1;}
+.edges{width:min-content;height:auto;background-color:#ccc;padding:20px;margin:120px auto;box-shadow:0 0 30px #333;}
+.title{color:#222;fot-size:20px;text-align:center;}
+.inner-image{position:relative;width:100%;height:100%;}
+.inner-image img{max-width:700px;max-height:450px;}
+.close-btn, .next-btn{float:right;}
+.close-btn{padding:5px 0;}
+.close-btn, .next-btn, .previous-btn{font-size:16px;}
+span a{color:#444;}
+.image-title{position:absolute;bottom:10px;font-size:16px;color:#222;background-color:transparent;border-bottom:5px solid #eee;padding:10px;cursor:pointer;opacity:0;transition:300ms ease;}
+inner-image:hover .image-title{opacity:0.8;}  
+</style>
 
-<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>-->
+<div class="container photo_filter">
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+                <li> <span class="btn btn-info btn_site">All</span> </li>
+                <li> <span class="btn btn-info btn_site">Gallery-1</span> </li>
+                <li> <span class="btn btn-info btn_site">Gallery-2</span> </li>
+                <li> <span class="btn btn-info btn_site">Gallery-3</span> </li>
+                <li> <span class="btn btn-info btn_site">Gallery-4</span> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+<div class="wrap-box">
+    <ul class="gallery">
+        <li class="image-thumbnail"><a href="#lightbox_1"><img src="http://www.anipedia.net/imagenes/elefantes-800x375.jpg" alt="Summer Season" class="image"></a></li>
+        <li class="image-thumbnail"><a href="#lightbox_2"><img src="http://www.anipedia.net/imagenes/imagen-aguilas-800x375.jpg" alt="Summer Season" class="image"></a></li>
+        <li class="image-thumbnail"><a href="#lightbox_3"><img src="http://www.anipedia.net/imagenes/conejos-800x375.jpg" alt="Summer Season" class="image"></a></li>
+        <li class="image-thumbnail"><a href="#lightbox_4"><img src="http://www.anipedia.net/imagenes/gatos-800x375.jpg" alt="Summer Season" class="image"></a></li>
+        <li class="image-thumbnail"><a href="#lightbox_5"><img src="http://www.anipedia.net/imagenes/leones-800x375.jpg" alt="Summer Season" class="image"></a></li>
+        <li class="image-thumbnail"><a href="#lightbox_6"><img src="http://www.anipedia.net/imagenes/tigres-800x375.jpg" alt="Summer Season" class="image"></a></li>
+    </ul>
+</div>
 
-<!--<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>-->
-<!--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
-
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-k2GFCTbp9rQU412BStrcD/rlwv1PYec9SNrkbQlo6RZCf75l6KcC3UwDY8H5n5hl4v77IDtIPwOk9Dqjs/mMBQ==" crossorigin="anonymous"></script>-->
-
-
-
-<!--<script src="{{ asset('assets') }}/js/jquery.popup.lightbox.js"></script>-->
-
-<!--<link href="{{ asset('assets') }}/css/popup-lightbox.css" rel="stylesheet" />-->
-
-
-
-
-<!--<style>-->
-
-
-
-
-<!--.my_popup-img-container {-->
-<!--margin: 20px;-->
-
-<!--}-->
-<!--.my_popup-img-container img {-->
-<!--width: 200px;-->
-<!--height: auto;-->
-<!--border: 1px solid #ccc;-->
-<!--border-radius: 5px;-->
-<!--cursor: pointer;-->
-<!---webkit-tap-highlight-color: transparent;-->
-<!--transition: .3s;-->
-<!---webkit-transition: .3s;-->
-<!---moz-transition: .3s;-->
-
-<!--}-->
-<!--.my_popup-img-container img:hover{-->
-<!--transform: scale(0.97);-->
-<!---webkit-transform: scale(0.97);-->
-<!---moz-transform: scale(0.97);-->
-<!---o-transform: scale(0.97);-->
-<!--opacity: 0.75;-->
-<!---webkit-opacity: 0.75;-->
-<!---moz-opacity: 0.75;-->
-<!--transition: .3s;-->
-<!---webkit-transition: .3s;-->
-<!---moz-transition: .3s;-->
-<!--}-->
-<!--</style>-->
-
-
-
-<!--   </head>-->
-<!--   <body>-->
-<!--		<div class="container">     -->
-<!--			<div class="my_popup-img-container">-->
-<!--			   <img src="https://source.unsplash.com/600x450/?fitness" alt="Fitness" />-->
-<!--			   <img src="https://source.unsplash.com/600x450/?bikini" alt="jQueryScript.Net"/>-->
-<!--			   <img src="https://source.unsplash.com/600x450/?girl" alt="Girls"/>-->
-<!--			   <img src="https://source.unsplash.com/600x450/?fashion" alt="Fashion" />-->
-<!--			</div>-->
-<!--		</div>-->
-<!--   </body>-->
-   
-   
-   
-   
-<!--<script>-->
-<!--$(document).ready(function(){-->
-
-<!--$(".my_popup-img-container").popupLightbox({-->
-<!--width: 600,-->
-<!--height: 450-->
-<!--});-->
-<!--});-->
-<!--</script>-->
-<!--<script type="text/javascript">-->
-<!--  var _gaq = _gaq || [];-->
-<!--  _gaq.push(['_setAccount', 'UA-36251023-1']);-->
-<!--  _gaq.push(['_setDomainName', 'jqueryscript.net']);-->
-<!--  _gaq.push(['_trackPageview']);-->
-
-<!--  (function() {-->
-<!--    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;-->
-<!--    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';-->
-<!--    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);-->
-<!--  })();-->
-<!--</script>-->
+<div class="light-box" id="lightbox_1">
+    <div class="edges"><span class="close-btn"><a href="#">X</a></span>
+        <p class="title">This is First Image</p>
+        <div class="inner-image">
+            <img src="http://www.anipedia.net/imagenes/elefantes-800x375.jpg" alt="image 01" class="swap"/>
+            <span class="image-title">Click Here for Learn More...</span>
+        </div>
+        <span class="next-btn"><a href="#lightbox_2">Next</a></span>
+        <span class="previous-btn"><a href="#lightbox_6">Previous</a></span>
+    </div>
+</div> <!-- Lightbox Image 01 -->
 
 
+<div class="light-box" id="lightbox_2">
+<div class="edges"><span class="close-btn"><a href="#">X</a></span>
+    <p class="title">This is Second Image</p>
+    <div class="inner-image">
+        <img src="http://www.anipedia.net/imagenes/imagen-aguilas-800x375.jpg" alt="image 02"/>
+            <span class="image-title">Click Here for Learn More...</span>
+        </div>
+            <span class="next-btn"><a href="#lightbox_3">Next</a></span>
+            <span class="previous-btn"><a href="#lightbox_1">Previous</a></span>
+    </div>
+</div> <!-- Lightbox Image 02 -->
+<div class="light-box" id="lightbox_3">
+<div class="edges"><span class="close-btn"><a href="#">X</a></span>
+    <p class="title">This is Thired Image</p>
+    <div class="inner-image">
+        <img src="http://www.anipedia.net/imagenes/conejos-800x375.jpg" alt="image 03"/>
+            <span class="image-title">Click Here for Learn More...</span>
+        </div>
+            <span class="next-btn"><a href="#lightbox_4">Next</a></span>
+            <span class="previous-btn"><a href="#lightbox_2">Previous</a></span>
+    </div>
+</div> <!-- Lightbox Image 03 -->
+<div class="light-box" id="lightbox_4">
+<div class="edges"><span class="close-btn"><a href="#">X</a></span>
+    <p class="title">This is Fourth Image</p>
+    <div class="inner-image">
+        <img src="http://www.anipedia.net/imagenes/gatos-800x375.jpg" alt="image 4"/>
+            <span class="image-title">Click Here for Learn More...</span>
+        </div>
+            <span class="next-btn"><a href="#lightbox_5">Next</a></span>
+            <span class="previous-btn"><a href="#lightbox_3">Previous</a></span>
+    </div>
+</div> <!-- Lightbox Image 04 -->
+<div class="light-box" id="lightbox_5">
+<div class="edges"><span class="close-btn"><a href="#">X</a></span>
+    <p class="title">This is Fifth Image</p>
+    <div class="inner-image">
+        <img src="http://www.anipedia.net/imagenes/leones-800x375.jpg" alt="image 05"/>
+            <span class="image-title">Click Here for Learn More...</span>
+        </div>
+            <span class="next-btn"><a href="#lightbox_6">Next</a></span>
+            <span class="previous-btn"><a href="#lightbox_4">Previous</a></span>
+    </div>
+</div> <!-- Lightbox Image 05 -->
+<div class="light-box" id="lightbox_6">
+<div class="edges"><span class="close-btn"><a href="#">X</a></span>
+    <p class="title">This is Sixth Image</p>
+    <div class="inner-image">
+        <img src="http://www.anipedia.net/imagenes/tigres-800x375.jpg" alt="image 06"/>
+            <span class="image-title">Click Here for Learn More...</span>
+        </div>
+            <span class="next-btn"><a href="#lightbox_1">Next</a></span>
+            <span class="previous-btn"><a href="#lightbox_5">Previous</a></span>
+    </div>
+</div> <!-- Lightbox Image 06 -->
+
+<script>
+    $(document).ready(function() {
+    $('.zoom-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        closeOnContentClick: false,
+        closeBtnInside: false,
+        mainClass: 'mfp-with-zoom mfp-img-mobile',
+        image: {
+            verticalFit: true,
+            titleSrc: function(item) {
+                return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+            }
+        },
+        gallery: {
+            enabled: true
+        },
+        zoom: {
+            enabled: true,
+            duration: 300, // don't foget to change the duration also in CSS
+            opener: function(element) {
+                return element.find('img');
+            }
+        }
+        
+    });
+});   
+</script>
 
 
-<!--
-
-@if (!empty($ourgallary))
+{{-- @if (!empty($ourgallary))
 @foreach ($ourgallary as $data)
 
  @endforeach 
-@endif 
--->
-
-
+@endif  --}}
 @include('layouts.default.footer')
