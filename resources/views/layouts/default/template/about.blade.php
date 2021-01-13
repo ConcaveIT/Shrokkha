@@ -82,8 +82,7 @@
     </div>
 </div> --}}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="{{ asset('assets') }}/js/jquery.2.1.0.min.js"></script>
 <div class="container-fluid" id="clients">
     <div class="row">
         <div class="col-12">

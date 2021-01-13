@@ -4184,7 +4184,7 @@ hero-style3
 ==================================================*/
 
 .wpo-team-content h2 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     margin-top: 0;
 }
@@ -7585,4 +7585,76 @@ padding-top: 50px;
 }
 .wpo-mission-content p{
     color:#000;
+}
+
+.modal_content h2{
+    margin-top:5px !important;
+    margin-bottom: 10px !important;
+}
+
+.modal_content p{
+  color:#000 !important;
+}
+.modal-body {
+    padding: 5px 15px 10px 15px !important;
+}
+#moadal1, #moadal2, #moadal3, #moadal4, #moadal5, #moadal6{
+display: none;
+}
+
+.modal-header .close {
+    margin-top: -2px;
+    padding: 2px 15px 2px 15px;
+    background: #dc0a0a;
+    color: #fff;
+    opacity: 1;
+    border-radius: 5px;
+}
+.mygobernig_body span{
+    font-size: 13px;
+    margin-bottom: 0px;
+}
+.mygobernig_body .wpo-team-text-sub {
+    margin-bottom: -75px;
+    transition: all .3s;
+}
+.mygobernig_body .wpo-team-content {
+    position: absolute;
+    right: 5px;
+    /* bottom: -100px; */
+    width: 96%;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+}
+.mygobernig_body ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+.popup_doal_img{
+    text-align: center;    
+}
+.popup_doal_img img{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    text-align: center;    
+}
+
+.popup_doal_description ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;    
+}
+
+.popup_doal_description ul li{
+    line-height: 33px;
+}
+
+.popup_doal p {
+    color: #000 !important;
+    font-size: 14px;
 }

@@ -27,7 +27,7 @@
                         </li>
                         <li><a href="{{route('about')}}">About Us</a></li>
                         <li><a href="{{route('what-we-do')}}">What We Do</a></li>
-                        <li><a href="#">Team</a></li>
+                        <li><a href="{{ route('team') }}">Team</a></li>
                         
                         {{-- <li><a href="{{route('donation')}}">Donation</a></li> --}}
                         
@@ -37,7 +37,6 @@
                                 <li><a href="{{url('/')}}/posts">News</a></li>
                                 <li><a href="{{ route('full.gallery') }}">Photos</a></li>
                                 <li><a href="#">Views</a></li>
-                                {{-- <li><a href="{{ route('governing.body') }}">Governing Body</a></li> --}}
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a></li>

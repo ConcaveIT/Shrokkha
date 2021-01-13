@@ -16,6 +16,8 @@ use App\Models\Websitesettings;
 use App\Models\Vacancyannouncement;
 use App\Notifications\arifPasswordResetNotification;
 use Hash;
+use Helper;
+
 
 use Illuminate\Support\Str;
 class VmslController extends Controller{
@@ -237,11 +239,11 @@ class VmslController extends Controller{
         return view('layouts.default.template.what-we-do', $data); 
     }
 
-    public function governing_body(){
+    public function team(){
         $data['title'] = 'Governig Body';
         $data['ourvolunteers'] = Ourvolunteers::orderBy('id', 'DESC')->get();
         $data['setting'] = Websitesettings::where('id', 1)->first();
-        return view('layouts.default.template.governig-body', $data); 
+        return view('layouts.default.template.team', $data); 
     }
 
     public function donation(){
@@ -249,6 +251,32 @@ class VmslController extends Controller{
         $data['setting'] = Websitesettings::where('id', 1)->first();
         return view('layouts.default.template.donation', $data); 
     }
+
+    public function user_details(Request $request){
+     $data = DB::table('our_volunteers')->where('id', $request->id)->first();
+
+      echo '
+            <div class="popup_doal_img">
+            <img src="http://127.0.0.1:86/uploads/images/governing-body/1610182650-78537926.jpg" alt="">
+            </div>
+            <div class="popup_doal_description">
+                <ul>
+                    <li> <b>Name:</b> Dr. Nizam Uddin Ahmed</li>
+                    <li> <b>Position:</b> General Secretary</li>
+                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
+                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
+                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
+                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
+                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
+                    <li>
+                        <p><b>Description:</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    </li>
+                </ul>
+            </div>
+            ';
+    }
+
+    
 
 	
 	

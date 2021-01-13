@@ -113,11 +113,9 @@ Route::get('career/circular/{id}','VmslController@circular')->name('circular');
 //shastho shurokkha
 Route::get('about','VmslController@about')->name('about');
 Route::get('what-we-do','VmslController@whatwedo')->name('what-we-do');
-Route::get('governing-body','VmslController@governing_body')->name('governing.body');
+Route::get('team','VmslController@team')->name('team');
 Route::get('donation','VmslController@donation')->name('donation');
 Route::get('gallery','VmslController@gallary')->name('full.gallery');
-
-
-
+Route::post('user-details', 'VmslController@user_details');
 
 
