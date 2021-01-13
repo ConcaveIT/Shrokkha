@@ -1,5 +1,5 @@
 @include('layouts.default.header')
-<section class="hidden_section"></div>
+<section class="hidden_section newspage"></div>
 <style>
 .wpo-mission-icon, .wpo-mission-icon-1, .wpo-mission-icon-2, .wpo-mission-icon-3, .wpo-mission-icon-4, .wpo-mission-content h2{
 	text-align: center;

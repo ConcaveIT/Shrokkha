@@ -257,24 +257,29 @@ class VmslController extends Controller{
 
       echo '
             <div class="popup_doal_img">
-            <img src="http://127.0.0.1:86/uploads/images/governing-body/1610182650-78537926.jpg" alt="">
+            <img src="http://127.0.0.1:86/uploads/images/governing-body/'.$data->image.'" alt="">
             </div>
             <div class="popup_doal_description">
                 <ul>
-                    <li> <b>Name:</b> Dr. Nizam Uddin Ahmed</li>
-                    <li> <b>Position:</b> General Secretary</li>
-                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
-                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
-                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
-                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
-                    <li> <b>Facebook:</b> www.facebook.com/dsadd</li>
-                    <li>
-                        <p><b>Description:</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    </li>
+                    <li> <b>Name:</b> ' .$data->name.'</li>
+                    <li> <b>Position:</b> ' .$data->profession.'</li>
+                    <li> <b>Facebook:</b>' .$data->facebook.'</li>
+                    <li> <b>Twitter:</b> ' .$data->twitter.'</li>
+                    <li> <b>Linkedin:</b> ' .$data->linkedin.'</li>
+                    <li> <b>Googleplus:</b>' .$data->googleplus.'</li>
+                    <li> <p><b>Description:</b> '.$data->description.'</p> </li>
                 </ul>
             </div>
             ';
     }
+
+    public function news(){
+      $data['title'] = 'News';
+      $data['setting'] = Websitesettings::where('id', 1)->first();
+      return view('layouts.default.template.news', $data); 
+    }
+
+    
 
     
 

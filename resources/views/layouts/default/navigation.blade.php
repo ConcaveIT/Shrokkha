@@ -34,9 +34,9 @@
                         <li class="menu-item-has-children">
                             <a href="#">Media</a>
                             <ul class="sub-menu">
-                                <li><a href="{{url('/')}}/posts">News</a></li>
+                                <li><a href="{{url('/')}}/news">News</a></li>
                                 <li><a href="{{ route('full.gallery') }}">Photos</a></li>
-                                <li><a href="#">Views</a></li>
+                                <li><a href="#">Videos</a></li>
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a></li>

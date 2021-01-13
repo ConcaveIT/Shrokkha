@@ -117,5 +117,6 @@ Route::get('team','VmslController@team')->name('team');
 Route::get('donation','VmslController@donation')->name('donation');
 Route::get('gallery','VmslController@gallary')->name('full.gallery');
 Route::post('user-details', 'VmslController@user_details');
+Route::get('news', 'VmslController@news');
 
 
