@@ -59,4 +59,19 @@ Route::resource('services/careerrequest','Services\CareerrequestController');
 Route::resource('services/vacancyannouncement','Services\VacancyannouncementController');
 // End Routes for vacancyannouncement 
 
+                    
+// Start Routes for mediacoverage 
+Route::resource('services/mediacoverage','Services\MediacoverageController');
+// End Routes for mediacoverage 
+
+                    
+// Start Routes for latestvideos 
+Route::resource('services/latestvideos','Services\LatestvideosController');
+// End Routes for latestvideos 
+
+                    
+// Start Routes for ourteam 
+Route::resource('services/ourteam','Services\OurteamController');
+// End Routes for ourteam 
+
                     ?>

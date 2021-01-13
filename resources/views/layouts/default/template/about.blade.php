@@ -30,17 +30,19 @@
   
 
 
-
-<div class="row section_p_b section_p_t">
-    <div class="col-12 text-center what_we who_we">
-        <h1>Who We Are?</h1>
-        <p>Shastho Shurokkha Foundation is a registered non-profit, social change maker, and    Foundation worked in the area of humanitarian responses, education, tree plantation and social awareness campaigns. With its evolving growth, strategic priorities and collaboration with stakeholders and national plans, we have revisited the strategic plan for the future in 2020. Our emphasis are on health,
-            education, Climate Change, poverty alleviation, capacity building advocacy and research. Shastho Shurokkha Foundation gradually expanded its strategic priorities and coverage throughout the country with partners and collaborators. In addition to health, our creative strategies to establish primary and secondary school based clubs as Shastho Shurokkha Club for promoting health education, promotion of hygiene and nutrition and also peer education at community. We conduct community mobilization for addressing barriers, advocacy for supporting policy, programs and utilization of ICT and TV media for reaching the millions of target population for achieving national plan and the SDGs.
-
-            Shastho Shurokkha Foundation (previously known as Ansary Memorial Foundation) initially started working in Sirajgonj district and gradually expanded its coverage to other districts in Bangladesh. SS Foundation has built the reputation of excellence in development & change maker organizations, connecting from root level to highest policy level.
-        </p>
+<div class="container">
+    <div class="row section_p_b section_p_t">
+        <div class="col-12 text-center what_we who_we">
+            <h1>Who We Are?</h1>
+            <p>Shastho Shurokkha Foundation is a registered non-profit, social change maker, and    Foundation worked in the area of humanitarian responses, education, tree plantation and social awareness campaigns. With its evolving growth, strategic priorities and collaboration with stakeholders and national plans, we have revisited the strategic plan for the future in 2020. Our emphasis are on health,
+                education, Climate Change, poverty alleviation, capacity building advocacy and research. Shastho Shurokkha Foundation gradually expanded its strategic priorities and coverage throughout the country with partners and collaborators. In addition to health, our creative strategies to establish primary and secondary school based clubs as Shastho Shurokkha Club for promoting health education, promotion of hygiene and nutrition and also peer education at community. We conduct community mobilization for addressing barriers, advocacy for supporting policy, programs and utilization of ICT and TV media for reaching the millions of target population for achieving national plan and the SDGs.
+    
+                Shastho Shurokkha Foundation (previously known as Ansary Memorial Foundation) initially started working in Sirajgonj district and gradually expanded its coverage to other districts in Bangladesh. SS Foundation has built the reputation of excellence in development & change maker organizations, connecting from root level to highest policy level.
+            </p>
+        </div>
     </div>
 </div>
+
 
 
 <div class="wpo-mission-area">
@@ -95,33 +97,22 @@
 		<div class="col-12 col-md-12 col-centered">
 			<div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3500">
 				<div class="carousel-inner">
-					<div class="item active">
+                    @php
+                        $video = DB::table('our_clients')->where('status', 1)->orderBy('id', 'DESC')->get();
+                    @endphp
+                    @if ($video)
+                    @foreach ($video as $data)
+					<div class="item @if($loop->iteration == 1) active @endif">
 						<div class="carousel-col">
 							<div class="block img-responsive">
-                                <a href="#">
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/clients/1610179660-58354072.png" alt="">
+                                <a target="__blank" href="{{ $data->partner_link }}">
+                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/clients/{{ $data->image }}" alt="">
                                 </a>
                             </div>
 						</div>
                     </div>
-					<div class="item">
-						<div class="carousel-col">
-							<div class="block img-responsive">
-                                <a href="#">
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/clients/1610179649-48823779.png" alt="">
-                                </a>
-                            </div>
-						</div>
-                    </div>
-					<div class="item">
-						<div class="carousel-col">
-							<div class="block img-responsive">
-                                <a href="#">
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/clients/1610179632-21004735.png" alt="">
-                                </a>
-                            </div>
-						</div>
-                    </div>
+                    @endforeach
+                    @endif
 				</div>
 			</div>
 		</div>

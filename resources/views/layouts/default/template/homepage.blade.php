@@ -116,66 +116,28 @@
             </div>
         </div>
         <div class="row">
+            @php
+                $media = DB::table('con_media_coverage')->where('status', 1)->orderBy('id', 'DESC')->get();
+            @endphp
+            @if ($media)
+            @foreach ($media as $data)
             <div class="col-lg-3 col-md-3 col-sm-6 col-12 custom-grid">
                 <div class="wpo-team-wrap">
                     <div class="wpo-team-img media_coverage_img">
-                        <img src="{{ asset('uploads') }}/images/leage.jpg" alt="">
+                        <img src="{{ asset('uploads') }}/images/media/{{$data->image}}" alt="">
                     </div>
                     <div class="wpo-team-content media_coverage">
                         <div class="wpo-team-text-sub">
-                            <img src="{{ asset('uploads') }}/images/prothomalo.jpg" alt="">
-                            <h4>বাংলাদেশ আওয়ামী লীগ</h4>
-                            <p>গ্লোবাল ইয়ং লিডার সামিটে আইসিটি প্রতিমন্ত্রীর প্রস্তাবনাঃ চতুর্থ শিল্প বিপ্লবে...</p>
-                            <a target="__blank" href="https://albd.org/bn/articles/news/35696/%E0%A6%8F%E0%A6%95%E0%A6%AF%E0%A7%81%E0%A6%97%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A6%A5%E0%A6%9A%E0%A6%B2%E0%A6%BE%" class="theme-btn btn_site_small">Read More</a>
+                            <img src="{{ asset('uploads') }}/images/media/{{$data->icon_image}}" alt="">
+                            <h4>{{$data->title}}</h4>
+                            <p>{{ Str::limit($data->short_description, $limit = 100, $end = '')}}</p>
+                            <a target="__blank" href="{{$data->link}}" class="theme-btn btn_site_small">Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-12 custom-grid">
-                <div class="wpo-team-wrap">
-                    <div class="wpo-team-img media_coverage_img">
-                        <img src="{{ asset('uploads') }}/images/newsonebd_messi.jpg" alt="">
-                    </div>
-                    <div class="wpo-team-content media_coverage">
-                        <div class="wpo-team-text-sub">
-                            <img src="{{ asset('uploads') }}/images/prothomalo.jpg" alt="">
-                            <h4>পেলেকে ছাড়িয়ে নতুন</h4>
-                            <p>গ্লোবাল ইয়ং লিডার সামিটে আইসিটি প্রতিমন্ত্রীর প্রস্তাবনাঃ চতুর্থ শিল্প বিপ্লবে...</p>
-                            <a target="__blank" href="https://newsonebd.com/%e0%a6%aa%e0%a7%87%e0%a6%b2%e0%a7%87%e0%a6%95%e0%a7%87-%e0%a6%9b%e0%a6%be%e0%a7%9c%e0%a6%bf%e0%a7%9f%e0%a7%87-%e0%a6%a8%e0%a6%a4%e0%a7%81%e0%a6%a8-%e0%a6%87%e0%a6%a4%e0%a6%bf%e0%a6%b9%e0%a6%be/" class="theme-btn btn_site_small">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-12 custom-grid">
-                <div class="wpo-team-wrap">
-                    <div class="wpo-team-img media_coverage_img">
-                        <img src="{{ asset('uploads') }}/images/leage.jpg" alt="">
-                    </div>
-                    <div class="wpo-team-content media_coverage">
-                        <div class="wpo-team-text-sub">
-                            <img src="{{ asset('uploads') }}/images/prothomalo.jpg" alt="">
-                            <h4>বাংলাদেশ আওয়ামী লীগ</h4>
-                            <p>গ্লোবাল ইয়ং লিডার সামিটে আইসিটি প্রতিমন্ত্রীর প্রস্তাবনাঃ চতুর্থ শিল্প বিপ্লবে...</p>
-                            <a target="__blank" href="https://albd.org/bn/articles/news/35696/%E0%A6%8F%E0%A6%95%E0%A6%AF%E0%A7%81%E0%A6%97%E0%A7%87%E0%A6%B0-%E0%A6%AA%E0%A6%A5%E0%A6%9A%E0%A6%B2%E0%A6%BE%" class="theme-btn btn_site_small">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-12 custom-grid">
-                <div class="wpo-team-wrap">
-                    <div class="wpo-team-img media_coverage_img">
-                        <img src="{{ asset('uploads') }}/images/newsonebd_messi.jpg" alt="">
-                    </div>
-                    <div class="wpo-team-content media_coverage">
-                        <div class="wpo-team-text-sub">
-                            <img src="{{ asset('uploads') }}/images/prothomalo.jpg" alt="">
-                            <h4>পেলেকে ছাড়িয়ে নতুন </h4>
-                            <p>গ্লোবাল ইয়ং লিডার সামিটে আইসিটি প্রতিমন্ত্রীর প্রস্তাবনাঃ চতুর্থ শিল্প বিপ্লবে...</p>
-                            <a target="__blank" href="https://newsonebd.com/%e0%a6%aa%e0%a7%87%e0%a6%b2%e0%a7%87%e0%a6%95%e0%a7%87-%e0%a6%9b%e0%a6%be%e0%a7%9c%e0%a6%bf%e0%a7%9f%e0%a7%87-%e0%a6%a8%e0%a6%a4%e0%a7%81%e0%a6%a8-%e0%a6%87%e0%a6%a4%e0%a6%bf%e0%a6%b9%e0%a6%be/" class="theme-btn btn_site_small">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div> 
+            @endforeach
+            @endif
         </div>
     </div>
 </div>
@@ -192,71 +154,40 @@
             </div>
         </div>
         <div class="row">
-
+            @php
+                $video = DB::table('con_videos')->where('status', 1)->where('show_home', 1)->orderBy('id', 'DESC')->get();
+            @endphp
+            @if ($video)
+            @foreach ($video as $data)
             <div class="col-lg-3 col-md-3">
                 <div class="wpo-about-video-item">
                     <div class="wpo-about-video-img">
-                        <img src="{{ asset('uploads') }}/images/video.png" alt="">
+                        <img src="{{ asset('uploads') }}/images/videos/{{$data->image}}" alt="">
                         <div class="entry-media video-holder">
-                            <a href="https://www.youtube.com/embed/OWnJrPKJjYc" class="video-btn" data-type="iframe">
-                                <i class=""></i>
-                            </a>
+                            @php 
+                                $video_id = explode('v=',$data->youtube_link); 
+                                if(count($video_id) > 1){
+                                    $video_id = $video_id[1];
+                                    $video_id = explode('&',$video_id)[0];
+                                }
+                            @endphp
+                            @if($video_id)
+                                <div class="entry-media video-holder">
+                                    <a href="{{ 'https://www.youtube.com/embed/'.$video_id }}" class="video-btn" data-type="iframe">
+                                        <i class=""></i>
+                                    </a>
+                                </div>
+                              @endif
                         </div>
                     </div>
                     <div class="video_text">
-                        <h4>It is a long established fact that a reader</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content.</p>
+                        <h4>{{$data->title}}</h4>
+                        <p>{{  Str::limit($data->description, $limit = 100, $end = '') }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3">
-                <div class="wpo-about-video-item">
-                    <div class="wpo-about-video-img">
-                        <img src="{{ asset('uploads') }}/images/video.png" alt="">
-                        <div class="entry-media video-holder">
-                            <a href="https://www.youtube.com/embed/OWnJrPKJjYc" class="video-btn" data-type="iframe">
-                                <i class=""></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="video_text">
-                        <h4>It is a long established fact that a reader</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3">
-                <div class="wpo-about-video-item">
-                    <div class="wpo-about-video-img">
-                        <img src="{{ asset('uploads') }}/images/video.png" alt="">
-                        <div class="entry-media video-holder">
-                            <a href="https://www.youtube.com/embed/OWnJrPKJjYc" class="video-btn" data-type="iframe">
-                                <i class=""></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="video_text">
-                        <h4>It is a long established fact that a reader</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3">
-                <div class="wpo-about-video-item">
-                    <div class="wpo-about-video-img">
-                        <img src="{{ asset('uploads') }}/images/video.png" alt="">
-                        <div class="entry-media video-holder">
-                            <a href="https://www.youtube.com/embed/OWnJrPKJjYc" class="video-btn" data-type="iframe">
-                                <i class=""></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="video_text">
-                        <h4>It is a long established fact that a reader</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable content.</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            @endif
         </div>
     </div>
 </div>
@@ -395,7 +326,7 @@
                             <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ date("h:i a", strtotime($data->created)) }}</li>
                             <li><i class="fi flaticon-pin"></i>{{ $data->metakey }}</li>
                         </ul>
-                            <p>  {{  Str::limit($data->metadesc, $limit = 100, $end = '') }}</p>
+                            <p>  {{  Str::limit($data->metadesc, $limit = 70, $end = '') }}</p>
 
                         <a href="{{url('posts/read/')}}/{{ $data->alias }}">Learn More...</a>
                     </div>
@@ -420,52 +351,27 @@
 		<div class="col-12 col-md-12 col-centered">
 			<div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3500">
 				<div class="carousel-inner">
-					<div class="item active">
+                    @php
+                        $video = DB::table('our_clients')->where('status', 1)->orderBy('id', 'DESC')->get();
+                    @endphp
+                    @if ($video)
+                    @foreach ($video as $data)
+					<div class="item @if($loop->iteration == 1) active @endif">
 						<div class="carousel-col">
 							<div class="block img-responsive">
-                                <a href="#">
-            
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/clients/1610179660-58354072.png" alt="">
+                                <a target="__blank" href="{{ $data->partner_link }}">
+                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/clients/{{ $data->image }}" alt="">
                                 </a>
                             </div>
 						</div>
                     </div>
-					<div class="item">
-						<div class="carousel-col">
-							<div class="block img-responsive">
-                                <a href="#">
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/clients/1610179649-48823779.png" alt="">
-                                </a>
-                            </div>
-						</div>
-                    </div>
-					<div class="item">
-						<div class="carousel-col">
-							<div class="block img-responsive">
-                                <a href="#">
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/clients/1610179632-21004735.png" alt="">
-                                </a>
-                            </div>
-						</div>
-                    </div>
+                    @endforeach
+                    @endif
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

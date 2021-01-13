@@ -263,10 +263,6 @@ class VmslController extends Controller{
                 <ul>
                     <li> <b>Name:</b> ' .$data->name.'</li>
                     <li> <b>Position:</b> ' .$data->profession.'</li>
-                    <li> <b>Facebook:</b>' .$data->facebook.'</li>
-                    <li> <b>Twitter:</b> ' .$data->twitter.'</li>
-                    <li> <b>Linkedin:</b> ' .$data->linkedin.'</li>
-                    <li> <b>Googleplus:</b>' .$data->googleplus.'</li>
                     <li> <p><b>Description:</b> '.$data->description.'</p> </li>
                 </ul>
             </div>

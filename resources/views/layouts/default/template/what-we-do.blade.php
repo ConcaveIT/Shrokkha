@@ -164,13 +164,6 @@
     </div>
   </div>
 <!--modal end-->
-
-
-
-
-
-
-
         <div class="wpo-mission-wrap">
             <div class="row">
                 <div class="col-md-2 col-sm-6 col-12 custom-grid" onclick="funcOne(1)">
@@ -249,8 +242,6 @@
         </div>
     </div>
 </div>
-
-
 
 <script>
 

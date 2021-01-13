@@ -117,6 +117,7 @@
 
 <script>
 $(document).on('click', '.btn_site', function(){
+    
     var id = $(this).attr('data-id');
     $.ajax({
            type:'POST',
@@ -124,6 +125,7 @@ $(document).on('click', '.btn_site', function(){
            data:{_token: "{{ csrf_token() }}", id:id},
            success:function(response){
               $('.modal_content').html(response);
+             $(this).parent('.wpo-team-content').find('.wpo-team-text-sub').css({"margin-bottom":"0"});
            }
         });
 });

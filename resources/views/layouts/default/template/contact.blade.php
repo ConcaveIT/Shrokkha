@@ -1,5 +1,5 @@
 @include('layouts.default.header')
-<section class="hidden_section newspage"></div>
+<section class="hidden_section newspage contact_page"></div>
 
 
 <div class="wpo-breadcumb-area">

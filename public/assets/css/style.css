@@ -3272,7 +3272,7 @@ hero-style3
 --------------------------------------------------------------*/
 .wpo-site-footer,
 .wpo-site-footer {
-    background: #062265;
+    background: #0070a6 !important;
     position: relative;
     font-size: 15px;
     overflow: hidden;
@@ -3284,7 +3284,7 @@ hero-style3
 }
 
 .wpo-ne-footer {
-    background: #062265;
+    background: #0070a6 !important;
 }
 
 .wpo-site-footer-2 {
@@ -3528,7 +3528,7 @@ hero-style3
 .wpo-site-footer-2 .wpo-lower-footer {
     text-align: center;
     position: relative;
-    background: #011b58;
+    background: #076694 !important;
 }
 
 .wpo-site-footer .wpo-lower-footer .row,
@@ -7128,7 +7128,7 @@ end*
 }
 
 .wpo-header-style-2 #navbar>ul>li>a, .wpo-header-style-3 #navbar>ul>li>a {
-    padding:50px 15px;
+    /* padding:50px 15px; */
 }
 #blog{
 /*padding-top: 200px;*/
@@ -7669,7 +7669,6 @@ display: none;
 }
 .newspage{
     height: 120px !important;
-    margin-bottom: 0;
 }
 .video_page .wpo-about-video-item {
     margin-bottom: 50px;
@@ -7718,4 +7717,19 @@ display: none;
 
 .info-item {
     min-height: 280px;
+}
+.contact_page{
+    margin-bottom: 0px;
+}
+
+.wpo-event-text h2{
+    font-size: 16px;
+}
+.wpo-event-text p{
+    font-size: 16px;
+}
+
+.wpo-event-text {
+    padding: 15px;
+    margin-top: -90px;
 }
