@@ -31,22 +31,33 @@
             </div>
         </div>
         <div class="row team_span">
-            @if ($ourvolunteers)
-            @foreach ($ourvolunteers as $data)
+            @php
+            $team = DB::table('con_team')->where('status', 1)->where('category', 1)->orderBy('id', 'DESC')->get();
+            @endphp
+            @if ($team)
+            @foreach ($team as $data)
             <div class="col-lg-3 col-md-3 col-sm-6 col-12 custom-grid">
                 <div class="wpo-team-wrap mygobernig_body">
                     <div class="wpo-team-img">
-                        <img src="{{ asset('uploads') }}/images/governing-body/{{$data->image}}" alt="">
+                        <img src="{{ asset('uploads') }}/images/team/{{$data->image}}" alt="">
                     </div>
                     <div class="wpo-team-content">
                         <div class="wpo-team-text-sub">
                             <h2>{{$data->name}}</h2>
-                            <span>{{$data->profession}}</span>
+                            <span>{{$data->position}}</span>
                             <ul>
-                                <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                <li><a href="#"><i class="ti-twitter"></i></a></li>
-                                <li><a href="#"><i class="ti-google"></i></a></li>
-                                <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                @if($data->facebook)
+                                    <li><a href="{{$data->facebook}}"><i class="ti-facebook"></i></a></li>
+                                @endif
+                                @if($data->twitter)
+                                    <li><a href="{{$data->twitter}}"><i class="ti-twitter"></i></a></li>
+                                @endif
+                                @if($data->linkedin)
+                                    <li><a href="{{$data->linkedin}}"><i class="ti-linkedin"></i></a></li>
+                                @endif
+                                @if($data->email)
+                                    <li><a href="{{$data->email}}"><i class="ti-email"></i></a></li>
+                                @endif
                             </ul>
                             <button data-id="{{$data->id}}" data-toggle="modal" data-target="#exampleModal" class="btn btn-info btn_site">Details</button>
                         </div>
@@ -75,22 +86,33 @@
             </div>
         </div>
         <div class="row team_span">
-            @if ($ourvolunteers)
-            @foreach ($ourvolunteers as $data)
+            @php
+            $team = DB::table('con_team')->where('status', 1)->where('category', 1)->orderBy('id', 'DESC')->get();
+            @endphp
+            @if ($team)
+            @foreach ($team as $data)
             <div class="col-lg-3 col-md-3 col-sm-6 col-12 custom-grid">
                 <div class="wpo-team-wrap mygobernig_body">
                     <div class="wpo-team-img">
-                        <img src="{{ asset('uploads') }}/images/governing-body/{{$data->image}}" alt="">
+                        <img src="{{ asset('uploads') }}/images/team/{{$data->image}}" alt="">
                     </div>
                     <div class="wpo-team-content">
                         <div class="wpo-team-text-sub">
                             <h2>{{$data->name}}</h2>
-                            <span>{{$data->profession}}</span>
+                            <span>{{$data->position}}</span>
                             <ul>
-                                <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                <li><a href="#"><i class="ti-twitter"></i></a></li>
-                                <li><a href="#"><i class="ti-google"></i></a></li>
-                                <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                @if($data->facebook)
+                                    <li><a href="{{$data->facebook}}"><i class="ti-facebook"></i></a></li>
+                                @endif
+                                @if($data->twitter)
+                                    <li><a href="{{$data->twitter}}"><i class="ti-twitter"></i></a></li>
+                                @endif
+                                @if($data->linkedin)
+                                    <li><a href="{{$data->linkedin}}"><i class="ti-linkedin"></i></a></li>
+                                @endif
+                                @if($data->email)
+                                    <li><a href="{{$data->email}}"><i class="ti-email"></i></a></li>
+                                @endif
                             </ul>
                             <button data-id="{{$data->id}}" data-toggle="modal" data-target="#exampleModal" class="btn btn-info btn_site">Details</button>
                         </div>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="page-header"><h2> {{ $pageTitle }} <small> {{ $pageNote }} </small> </h2></div>
 
-	{!! Form::open(array('url'=>'ourteam?return='.$return, 'class'=>'form-horizontal validated sximo-form','files' => true ,'id'=> 'FormTable' )) !!}
+	{!! Form::open(array('url'=>'socialfeeds?return='.$return, 'class'=>'form-horizontal validated sximo-form','files' => true ,'id'=> 'FormTable' )) !!}
 	<div class="toolbar-nav">
 		<div class="row">
 			
@@ -28,12 +28,12 @@
 		</ul>		
 		<div class="row">
 	<div class="col-md-12">
-						<fieldset><legend> Our Team</legend>
+						<fieldset><legend> Social Feeds</legend>
 				{!! Form::hidden('id', $row['id']) !!}					
 									  <div class="form-group row  " >
-										<label for="Name" class=" control-label col-md-4 text-left"> Name <span class="asterix"> * </span></label>
+										<label for="Title" class=" control-label col-md-4 text-left"> Title <span class="asterix"> * </span></label>
 										<div class="col-md-6">
-										  <input  type='text' name='name' id='name' value='{{ $row['name'] }}' 
+										  <input  type='text' name='title' id='title' value='{{ $row['title'] }}' 
 						required     class='form-control form-control-sm ' /> 
 										 </div> 
 										 <div class="col-md-2">
@@ -50,7 +50,7 @@
 						    <input type="file" name="image" class="upload"   accept="image/x-png,image/gif,image/jpeg"     />
 						</div>
 						<div class="image-preview preview-upload">
-							{!! SiteHelpers::showUploadedFile( $row["image"],"/uploads/images/team") !!}
+							{!! SiteHelpers::showUploadedFile( $row["image"],"/uploads/images/social") !!}
 						</div>
 					 
 										 </div> 
@@ -59,68 +59,28 @@
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Position" class=" control-label col-md-4 text-left"> Position <span class="asterix"> * </span></label>
-										<div class="col-md-6">
-										  <input  type='text' name='position' id='position' value='{{ $row['position'] }}' 
-						required     class='form-control form-control-sm ' /> 
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Category" class=" control-label col-md-4 text-left"> Category <span class="asterix"> * </span></label>
+										<label for="Icon Image" class=" control-label col-md-4 text-left"> Icon Image </label>
 										<div class="col-md-6">
 										  
-					<?php $category = explode(',',$row['category']);
-					$category_opt = array( '1' => 'Governance' ,  '2' => 'Management' , ); ?>
-					<select name='category' rows='5' required  class='select2 '  > 
-						<?php 
-						foreach($category_opt as $key=>$val)
-						{
-							echo "<option  value ='$key' ".($row['category'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
-						}						
-						?></select> 
+						<div class="fileUpload btn " > 
+						    <span>  <i class="fa fa-camera"></i>  </span>
+						    <div class="title"> Browse File </div>
+						    <input type="file" name="icon_image" class="upload"   accept="image/x-png,image/gif,image/jpeg"     />
+						</div>
+						<div class="icon_image-preview preview-upload">
+							{!! SiteHelpers::showUploadedFile( $row["icon_image"],"/uploads/images/social") !!}
+						</div>
+					 
 										 </div> 
 										 <div class="col-md-2">
 										 	
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Facebook" class=" control-label col-md-4 text-left"> Facebook </label>
+										<label for="Short Description" class=" control-label col-md-4 text-left"> Short Description </label>
 										<div class="col-md-6">
-										  <input  type='text' name='facebook' id='facebook' value='{{ $row['facebook'] }}' 
-						     class='form-control form-control-sm ' /> 
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Twitter" class=" control-label col-md-4 text-left"> Twitter </label>
-										<div class="col-md-6">
-										  <input  type='text' name='twitter' id='twitter' value='{{ $row['twitter'] }}' 
-						     class='form-control form-control-sm ' /> 
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Linkedin" class=" control-label col-md-4 text-left"> Linkedin </label>
-										<div class="col-md-6">
-										  <input  type='text' name='linkedin' id='linkedin' value='{{ $row['linkedin'] }}' 
-						     class='form-control form-control-sm ' /> 
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Email" class=" control-label col-md-4 text-left"> Email </label>
-										<div class="col-md-6">
-										  <input  type='text' name='email' id='email' value='{{ $row['email'] }}' 
-						     class='form-control form-control-sm ' /> 
+										  <textarea name='short_description' rows='5' id='short_description' class='form-control form-control-sm '  
+				           >{{ $row['short_description'] }}</textarea> 
 										 </div> 
 										 <div class="col-md-2">
 										 	
@@ -129,8 +89,18 @@
 									  <div class="form-group row  " >
 										<label for="Description" class=" control-label col-md-4 text-left"> Description </label>
 										<div class="col-md-6">
-										  <textarea name='description' rows='5' id='description' class='form-control form-control-sm '  
-				           >{{ $row['description'] }}</textarea> 
+										  <textarea name='description' rows='5' id='editor' class='form-control form-control-sm editor '  
+						 >{{ $row['description'] }}</textarea> 
+										 </div> 
+										 <div class="col-md-2">
+										 	
+										 </div>
+									  </div> 					
+									  <div class="form-group row  " >
+										<label for="Link" class=" control-label col-md-4 text-left"> Link <span class="asterix"> * </span></label>
+										<div class="col-md-6">
+										  <input  type='text' name='link' id='link' value='{{ $row['link'] }}' 
+						required     class='form-control form-control-sm ' /> 
 										 </div> 
 										 <div class="col-md-2">
 										 	
@@ -171,7 +141,7 @@
 		 	 
 
 		$('.removeMultiFiles').on('click',function(){
-			var removeUrl = '{{ url("ourteam/removefiles?file=")}}'+$(this).attr('url');
+			var removeUrl = '{{ url("socialfeeds/removefiles?file=")}}'+$(this).attr('url');
 			$(this).parent().remove();
 			$.get(removeUrl,function(response){});
 			$(this).parent('div').empty();	

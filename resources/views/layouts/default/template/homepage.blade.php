@@ -208,71 +208,34 @@
 		<div class="col-12 col-md-12 col-centered">
 			<div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3500">
 				<div class="carousel-inner">
-					<div class="item active">
+
+	                @php
+                        $feeds = DB::table('con_social_feed')->where('status', 1)->orderBy('id', 'DESC')->get();
+                    @endphp
+                    @if ($feeds)
+                    @foreach ($feeds as $data)
+					<div class="item @if($loop->iteration == 1) active @endif">
 						<div class="carousel-col">
 							<div class="block img-responsive">
-                                <a href="#">
-                                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                                    <h4>To empower communities</h4>
-                                    <span>4 days ago</span>
-                                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
+                                <a href="{{ $data->link }}">
+                                    <img class="block_image" src="{{ asset('uploads') }}/images/social/{{ $data->icon_image }}" alt="">
+                                    <h4>{{ $data->title }}</h4>
+                                    @php
+                                      
+                                      $from = \Carbon\Carbon::createFromTimestamp(strtotime($data->created_at));
+                                      $to = \Carbon\Carbon::now();
+                                    @endphp
+                                    {{-- <span>{{ $from->diffInHours($to) }}</span>
+                                    <span>{{ $to->diffInMinutes($from) }}<span> --}}
+                                    <span>{{ Carbon\Carbon::createFromTimestamp(strtotime($data->created_at))->diff(\Carbon\Carbon::now())->days }} days ago</span>
+                                    <p>{{  Str::limit($data->short_description, $limit = 100, $end = '') }}</p>
+                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/social/{{ $data->image }}" alt="">
                                 </a>
                             </div>
 						</div>
                     </div>
-					<div class="item">
-						<div class="carousel-col">
-							<div class="block img-responsive">
-                                <a href="#">
-                                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                                    <h4>To empower communities</h4>
-                                    <span>4 days ago</span>
-                                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
-                                </a>
-                            </div>
-						</div>
-                    </div>
-					<div class="item">
-						<div class="carousel-col">
-							<div class="block img-responsive">
-                                <a href="#">
-                                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                                    <h4>To empower communities</h4>
-                                    <span>4 days ago</span>
-                                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
-                                </a>
-                            </div>
-						</div>
-                    </div>
-					<div class="item">
-						<div class="carousel-col">
-							<div class="block img-responsive">
-                                <a href="#">
-                                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                                    <h4>To empower communities</h4>
-                                    <span>4 days ago</span>
-                                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
-                                </a>
-                            </div>
-						</div>
-                    </div>
-					<div class="item">
-						<div class="carousel-col">
-							<div class="block img-responsive">
-                                <a href="#">
-                                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                                    <h4>To empower communities</h4>
-                                    <span>4 days ago</span>
-                                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
-                                </a>
-                            </div>
-						</div>
-					</div>
+                    @endforeach
+                    @endif
 				</div>
 
 				<!-- Controls -->

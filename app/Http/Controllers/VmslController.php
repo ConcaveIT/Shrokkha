@@ -253,16 +253,16 @@ class VmslController extends Controller{
     }
 
     public function user_details(Request $request){
-     $data = DB::table('our_volunteers')->where('id', $request->id)->first();
+     $data = DB::table('con_team')->where('id', $request->id)->first();
 
       echo '
             <div class="popup_doal_img">
-            <img src="http://127.0.0.1:86/uploads/images/governing-body/'.$data->image.'" alt="">
+            <img src="http://127.0.0.1:86/uploads/images/team/'.$data->image.'" alt="">
             </div>
             <div class="popup_doal_description">
                 <ul>
                     <li> <b>Name:</b> ' .$data->name.'</li>
-                    <li> <b>Position:</b> ' .$data->profession.'</li>
+                    <li> <b>Position:</b> ' .$data->position.'</li>
                     <li> <p><b>Description:</b> '.$data->description.'</p> </li>
                 </ul>
             </div>

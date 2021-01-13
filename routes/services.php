@@ -74,4 +74,9 @@ Route::resource('services/latestvideos','Services\LatestvideosController');
 Route::resource('services/ourteam','Services\OurteamController');
 // End Routes for ourteam 
 
+                    
+// Start Routes for socialfeeds 
+Route::resource('services/socialfeeds','Services\SocialfeedsController');
+// End Routes for socialfeeds 
+
                     ?>
