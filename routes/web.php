@@ -95,7 +95,7 @@ Route::get('getmedicine/{id}','CitController@getMedicineById');
 Route::get('event/single/{id}','VmslController@event_single')->name('event.single');
 Route::get('causes/single/{id}','VmslController@causes_single')->name('causes.single');
 Route::get('volunteer/single/{id}','VmslController@volunteer_single')->name('volunteer.single');
-Route::post('contactform','VmslController@contact_data')->name('contact.data');
+
 Route::post('sendmail','VmslController@contact_email')->name('contact.email');
 Route::post('account','VmslController@volunteer_account')->name('volunteer.create.account');
 Route::get('volunteer','VmslController@grid_volunteer')->name('grid.volunteer');
@@ -116,5 +116,5 @@ Route::post('user-details', 'VmslController@user_details');
 Route::get('news', 'VmslController@news');
 Route::get('videos','VmslController@video')->name('video');
 Route::get('contact','VmslController@contact_page')->name('contact.page');
-
+Route::post('contactform','VmslController@contact_data')->name('contact.data');
 

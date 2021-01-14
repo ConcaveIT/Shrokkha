@@ -1,5 +1,10 @@
 @include('layouts.default.header')
 <section class="hidden_section newspage"></div>
+<style>
+.block_image_big {
+    height: 262px;
+}    
+</style>
 <div class="container news_page">
     <div class="row">
         <div class="col-12">
@@ -9,72 +14,28 @@
         </div>
     </div>
     <div class="row">
+        @php
+            $feeds = DB::table('con_social_feed')->where('status', 1)->orderBy('id', 'DESC')->paginate(6);
+        @endphp
+        @if ($feeds)
+        @foreach ($feeds as $data)
         <div class="col-md-4">
             <div class="block img-responsive">
-                <a href="#">
-                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                    <h4>To empower communities</h4>
-                    <span>4 days ago</span>
-                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
+                <a href="{{ $data->link }}">
+                    <img class="block_image" src="{{ asset('uploads') }}/images/social/{{ $data->icon_image }}" alt="">
+                    <h4>{{ $data->title }}</h4>
+                    @php        
+                        $from = \Carbon\Carbon::createFromTimestamp(strtotime($data->created_at));
+                        $to = \Carbon\Carbon::now();
+                    @endphp
+                    <span>{{ Carbon\Carbon::createFromTimestamp(strtotime($data->created_at))->diff(\Carbon\Carbon::now())->days }} days ago</span>
+                    <p>{{  Str::limit($data->short_description, $limit = 100, $end = '') }}</p>
+                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/social/{{ $data->image }}" alt="">
                 </a>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="block img-responsive">
-                <a href="#">
-                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                    <h4>To empower communities</h4>
-                    <span>4 days ago</span>
-                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="block img-responsive">
-                <a href="#">
-                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                    <h4>To empower communities</h4>
-                    <span>4 days ago</span>
-                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="block img-responsive">
-                <a href="#">
-                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                    <h4>To empower communities</h4>
-                    <span>4 days ago</span>
-                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="block img-responsive">
-                <a href="#">
-                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                    <h4>To empower communities</h4>
-                    <span>4 days ago</span>
-                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="block img-responsive">
-                <a href="#">
-                    <img class="block_image" src="{{ asset('uploads') }}/images/video.png" alt="">
-                    <h4>To empower communities</h4>
-                    <span>4 days ago</span>
-                    <p> ১০ জানুয়ারি জাতির পিতা বঙ্গবন্ধু শেখ মুজিবুর রহমানের স্বদেশ প্রত্যাবর্তন দিবস</p>
-                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/19.jpg" alt="">
-                </a>
-            </div>
-        </div>
+        @endforeach
+        @endif
     </div>
 </div>
 @include('layouts.default.footer')

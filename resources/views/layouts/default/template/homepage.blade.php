@@ -117,7 +117,7 @@
         </div>
         <div class="row">
             @php
-                $media = DB::table('con_media_coverage')->where('status', 1)->orderBy('id', 'DESC')->get();
+                $media = DB::table('con_media_coverage')->where('status', 1)->orderBy('id', 'DESC')->limit(4)->get();
             @endphp
             @if ($media)
             @foreach ($media as $data)
@@ -155,7 +155,7 @@
         </div>
         <div class="row">
             @php
-                $video = DB::table('con_videos')->where('status', 1)->where('show_home', 1)->orderBy('id', 'DESC')->get();
+                $video = DB::table('con_videos')->where('status', 1)->where('show_home', 1)->orderBy('id', 'DESC')->limit(4)->get();
             @endphp
             @if ($video)
             @foreach ($video as $data)
@@ -269,8 +269,7 @@
         <div class="row">
             @php
                 use \Illuminate\Support\Str;
-
-                $blog = DB::table('tb_pages')->where('status', 'enable')->where('pagetype', 'post')->orderBy('pageID', 'DESC')->get();
+                $blog = DB::table('tb_pages')->where('status', 'enable')->where('pagetype', 'post')->orderBy('pageID', 'DESC')->limit(3)->get();
             @endphp
             @if ($blog)
             @foreach ($blog as $data)
@@ -315,10 +314,10 @@
 			<div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3500">
 				<div class="carousel-inner">
                     @php
-                        $video = DB::table('our_clients')->where('status', 1)->orderBy('id', 'DESC')->get();
+                        $partner = DB::table('our_clients')->where('status', 1)->orderBy('id', 'DESC')->get();
                     @endphp
-                    @if ($video)
-                    @foreach ($video as $data)
+                    @if ($partner)
+                    @foreach ($partner as $data)
 					<div class="item @if($loop->iteration == 1) active @endif">
 						<div class="carousel-col">
 							<div class="block img-responsive">

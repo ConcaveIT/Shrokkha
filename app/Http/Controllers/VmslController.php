@@ -72,33 +72,23 @@ class VmslController extends Controller{
 	}
 	public function contact_data(Request $request){
         $rules = [
-            'name' => 'required',
-            'phone' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'phone' => 'required|max:11|min:11',
             'email' => 'required|email',
             'message' => 'required',
         ];
-        $customMessages = [
-            'name.required' => 'You have to fill the name field.',
-            'phone.required' => 'You have to fill the phone field.',
-            'email.required' => 'You have to fill the email field.',
-            'message.required' => 'You have to fill the message field.',
-        ];
-        if ($this->validate($request, $rules, $customMessages)) {
-            $data['name']    = $request->name;
+
+        if ($this->validate($request, $rules)) {
+            $data['first_name']    = $request->first_name;
+            $data['last_name']    = $request->last_name;
             $data['email']   = $request->email;
             $data['phone']   =  $request->phone;
             $data['message'] = $request->message;
-            DB::table('contact')->insert($data);
+            $data['status'] = 1;
+           DB::table('contact')->insert($data);
         }
-        echo " <div class='row formSentMsg'>
-        		<div class='col-md-12 mt-2'>
-                        <p style='margin-top:10px; font-style:italic; color:green; '>Message send Successfully..!</p>
-                </div>
-                </div>
-                <script type='text/javascript'>
-                   $('.formSentMsg').delay(5000).fadeOut(300);
-                </script>
-            ";
+        return back()->with('message', 'Successfully message sent.');
 	}
 	
 	public function contact_email(Request $request){
