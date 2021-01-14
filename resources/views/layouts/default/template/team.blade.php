@@ -1,6 +1,11 @@
 @include('layouts.default.header')
 <section class="hidden_section newspage"></div>
-
+<style>
+.ti-facebook:hover {
+    background: none !important;
+    color: #003fd6 !important;
+}    
+</style>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

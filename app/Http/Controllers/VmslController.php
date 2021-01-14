@@ -47,7 +47,7 @@ class VmslController extends Controller{
     }
 	}
 	public function gallary(){
-        $data['title'] = 'Gallery';
+        $data['title'] = 'Photo';
 		$data['ourgallary'] = Ourgallary::all();
 		$data['setting'] = Websitesettings::where('id', 1)->first();
 		return view('layouts.default.template.gallary', $data);
@@ -230,7 +230,7 @@ class VmslController extends Controller{
     }
 
     public function team(){
-        $data['title'] = 'Governig Body';
+        $data['title'] = 'Team';
         $data['ourvolunteers'] = Ourvolunteers::orderBy('id', 'DESC')->get();
         $data['setting'] = Websitesettings::where('id', 1)->first();
         return view('layouts.default.template.team', $data); 
@@ -247,7 +247,7 @@ class VmslController extends Controller{
 
       echo '
             <div class="popup_doal_img">
-            <img src="http://127.0.0.1:86/uploads/images/team/'.$data->image.'" alt="">
+            <img src="'.url('/').'/uploads/images/team/'.$data->image.'" alt="">
             </div>
             <div class="popup_doal_description">
                 <ul>
@@ -283,12 +283,12 @@ class VmslController extends Controller{
       $result = '';
       foreach ($media as $key=> $data){
         $index = $key+1;
-          $result .= '<li class="image-thumbnail"><a href="#lightbox_'.$index.'"><img src="http://127.0.0.1:86/uploads/images/gallery/'.$data->image.'" alt="Summer Season" class="image"></a></li>
+          $result .= '<li class="image-thumbnail"><a href="#lightbox_'.$index.'"><img src="'.url('/').'/uploads/images/gallery/'.$data->image.'" alt="Summer Season" class="image"></a></li>
           <div class="light-box" id="lightbox_'.$index.'">
               <div class="edges"><span class="close-btn"><a href="#">X</a></span>
                   <p class="title">'.$data->title.'</p>
                   <div class="inner-image">
-                      <img src="http://127.0.0.1:86/uploads/images/gallery/'.$data->image.'" alt="image 01" class="swap"/>
+                      <img src="'.url('/').'/uploads/images/gallery/'.$data->image.'" alt="image 01" class="swap"/>
                   </div>
                   <span class="next-btn"><a href="#lightbox_'.($index+1).'">Next</a></span>
                   <span class="previous-btn"><a href="#lightbox_'.($index-1).'">Previous</a></span>

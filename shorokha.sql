@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2021 at 08:15 AM
+-- Generation Time: Jan 14, 2021 at 12:43 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -179,13 +179,13 @@ CREATE TABLE `con_team` (
 --
 
 INSERT INTO `con_team` (`id`, `name`, `image`, `position`, `category`, `facebook`, `twitter`, `linkedin`, `email`, `description`, `created_at`, `status`) VALUES
-(1, 'Dr. Nizam Uddin Ahmed', '1610551972-83278779.jpg', 'Dr. Nizam Uddin Ahmed', '1', NULL, NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2021-01-13 15:32:52', '1'),
+(1, 'Dr. Nizam Uddin Ahmed', '1610551972-83278779.jpg', 'Dr. Nizam Uddin Ahmed', '1', 'https://www.facebook.com/?_rdc=2&_rdr', NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2021-01-13 15:32:52', '1'),
 (2, 'Prof. Dr. Md. Habibe Millat MP', '1610555583-56338179.jpg', 'Chairman', '1', NULL, NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2021-01-13 16:33:03', '1'),
 (3, 'Maj Gen Prof. Dr. Harunur Rashid (Retd.)', '1610555709-44669091.jpg', 'Vice Chairman', '1', NULL, NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2021-01-13 16:35:09', '1'),
 (4, 'Dr. S.M. Jaglul A. Mozumdar', '1610555753-50182077.jpg', 'Director-Finance', '1', NULL, NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2021-01-13 16:35:53', '1'),
 (5, 'Ms. Sharita Millat CIP', '1610555787-85181531.jpg', 'Director', '1', NULL, NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2021-01-13 16:36:27', '1'),
 (6, 'Md. Rafiqul Islam', '1610555811-1170314.jpg', 'Director', '1', NULL, NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2021-01-13 16:36:51', '1'),
-(7, 'Mr. Abdullah Al Razwan', '1610555837-18585173.jpg', 'Director', '1', NULL, NULL, NULL, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2021-01-13 16:37:17', '1');
+(7, 'Mr. Abdullah Al Razwan', '1610555837-18585173.jpg', 'Director', '1', 'https://www.facebook.com/shasthoshurokkha', 'https://twitter.com/shasthoshurokkha', 'https://bd.linkedin.com/shasthoshurokkha', 'info@shasthoshurokkha.org', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2021-01-13 16:37:17', '1');
 
 -- --------------------------------------------------------
 
@@ -1018,7 +1018,9 @@ INSERT INTO `tb_logs` (`auditID`, `ipaddress`, `user_id`, `module`, `task`, `not
 (303, '127.0.0.1', 1, 'ourgallary', NULL, 'Data with ID 5 Has been Updated !', '2021-01-14 04:43:41'),
 (304, '127.0.0.1', 1, 'ourgallary', NULL, 'Data with ID 6 Has been Updated !', '2021-01-14 04:43:57'),
 (305, '127.0.0.1', 1, 'ourgallary', NULL, 'Data with ID 7 Has been Updated !', '2021-01-14 04:44:41'),
-(306, '127.0.0.1', 1, 'ourgallary', NULL, 'Data with ID 8 Has been Updated !', '2021-01-14 04:44:56');
+(306, '127.0.0.1', 1, 'ourgallary', NULL, 'Data with ID 8 Has been Updated !', '2021-01-14 04:44:56'),
+(307, '127.0.0.1', 1, 'ourteam', NULL, 'Data with ID 1 Has been Updated !', '2021-01-14 11:35:46'),
+(308, '127.0.0.1', 1, 'ourteam', NULL, 'Data with ID 7 Has been Updated !', '2021-01-14 11:38:48');
 
 -- --------------------------------------------------------
 
@@ -1178,7 +1180,7 @@ INSERT INTO `tb_pages` (`pageID`, `cid`, `title`, `alias`, `sinopsis`, `note`, `
 (100, NULL, 'Home', 'home', NULL, '<p><br></p>', 'homepage', NULL, 'enable', '{\"1\":\"1\",\"2\":\"0\",\"3\":\"0\"}', '1', 'frontend', NULL, NULL, '1', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL),
 (101, 1, 'Memorandum of Understanding (MoU)', 'goals', NULL, '<p><span style=\"color: #212529; font-family: \'Open Sans\', sans-serif; font-size: 15px;\">Shastho Shurokkha Foundation signed a Memorandum of Understanding (MoU) with Bangladesh Red Crescent Societies (BRCS) for promoting volunteerism and to work together to fight against COVID-19. The signing ceremony held at BRCS head office at Moghbazer, Dhaka. Mr. Md. Feroz Salah Uddin, Secretary General of Bangladesh Red Crescent Societies (BRCS) and&nbsp; Dr. Nizam Uddin Ahmed, General Secretary of Shastho Shurokkha Foundation signed on behalf of their respective organizations. High officials from both the organizations were present on the occasion.</span></p>', NULL, NULL, 'enable', '{\"1\":\"1\",\"2\":\"0\",\"3\":\"0\"}', '1', 'frontend', 'Tangail', 'Shastho Shurokkha Foundation signed a Memorandum of Understanding (MoU) with Bangladesh Red Crescent Societies (BRCS) for promoting volunteerism and to work together to fight against COVID-19. The signing ceremony held at BRCS head office at Moghbazer, Dhaka. Mr. Md. Feroz Salah Uddin, Secretary General of Bangladesh Red Crescent Societies (BRCS) and  Dr. Nizam Uddin Ahmed, General Secretary of Shastho Shurokkha Foundation signed on behalf of their respective organizations. High officials from both the organizations were present on the occasion.', '0', 'post', NULL, 40, 1, NULL, NULL, '1610114284-23893752.jpg', '2021-01-08 13:58:04', '2021-08-20 10:48:00'),
 (103, 1, 'Shastho Shurokkha Foundation', 'Shastho Shurokkha Foundation', NULL, '<p><span style=\"color: #212529; font-family: \'Open Sans\', sans-serif; font-size: 15px;\">Shastho Shurokkha Foundation distributed relief among the disadvantaged group of people in different places of Bangladesh. Prof. Dr. Habibe Millat MP, Chairman, Shastho Shurokkha Foundation distributed food among thousands families of Sirajgonj districts and Dr. Jaglul Abbas Mazumder, Director,&nbsp; Shastho Shurokkha Foundation given rice and essential products to the needy people in Gazipur district are seen in the pictures.</span></p>', NULL, NULL, 'enable', '{\"1\":\"1\",\"2\":\"1\",\"3\":\"0\"}', '1', 'frontend', 'Dhaka', 'Shastho Shurokkha Foundation distributed relief among the disadvantaged group of people in different places of Bangladesh. Prof. Dr. Habibe Millat MP, Chairman, Shastho Shurokkha Foundation distributed food among thousands families of Sirajgonj districts and Dr. Jaglul Abbas Mazumder, Director,  Shastho Shurokkha Foundation given rice and essential products to the needy people in Gazipur district are seen in the pictures.', '0', 'post', NULL, 4, 1, NULL, NULL, '1610114391-68873038.jpg', NULL, '2021-01-08 13:59:51'),
-(102, 1, 'Shastho Shurokkha Foundation', 'test-post', NULL, '<p><span style=\"color: #212529; font-family: \'Open Sans\', sans-serif; font-size: 15px;\">Shastho Shurokkha Foundation distributed relief among the disadvantaged group of people in different places of Bangladesh. Prof. Dr. Habibe Millat MP, Chairman, Shastho Shurokkha Foundation distributed food among thousands families of Sirajgonj districts and Dr. Jaglul Abbas Mazumder, Director,&nbsp; Shastho Shurokkha Foundation given rice and essential products to the needy people in Gazipur district are seen in the pictures.</span></p>', NULL, NULL, 'enable', '{\"1\":\"1\",\"2\":\"0\",\"3\":\"0\"}', '1', 'frontend', 'Tangail', 'Shastho Shurokkha Foundation distributed relief among the disadvantaged group of people in different places of Bangladesh. Prof. Dr. Habibe Millat MP, Chairman, Shastho Shurokkha Foundation distributed food among thousands families of Sirajgonj districts and Dr. Jaglul Abbas Mazumder, Director,  Shastho Shurokkha Foundation given rice and essential products to the needy people in Gazipur district are seen in the pictures.', '0', 'post', NULL, 6, 1, NULL, NULL, '1610114265-10150122.jpg', '2021-01-08 13:57:45', '2021-02-17 10:52:00');
+(102, 1, 'Shastho Shurokkha Foundation', 'test-post', NULL, '<p><span style=\"color: #212529; font-family: \'Open Sans\', sans-serif; font-size: 15px;\">Shastho Shurokkha Foundation distributed relief among the disadvantaged group of people in different places of Bangladesh. Prof. Dr. Habibe Millat MP, Chairman, Shastho Shurokkha Foundation distributed food among thousands families of Sirajgonj districts and Dr. Jaglul Abbas Mazumder, Director,&nbsp; Shastho Shurokkha Foundation given rice and essential products to the needy people in Gazipur district are seen in the pictures.</span></p>', NULL, NULL, 'enable', '{\"1\":\"1\",\"2\":\"0\",\"3\":\"0\"}', '1', 'frontend', 'Tangail', 'Shastho Shurokkha Foundation distributed relief among the disadvantaged group of people in different places of Bangladesh. Prof. Dr. Habibe Millat MP, Chairman, Shastho Shurokkha Foundation distributed food among thousands families of Sirajgonj districts and Dr. Jaglul Abbas Mazumder, Director,  Shastho Shurokkha Foundation given rice and essential products to the needy people in Gazipur district are seen in the pictures.', '0', 'post', NULL, 7, 1, NULL, NULL, '1610114265-10150122.jpg', '2021-01-08 13:57:45', '2021-02-17 10:52:00');
 
 -- --------------------------------------------------------
 
@@ -1605,7 +1607,7 @@ ALTER TABLE `con_team`
 -- AUTO_INCREMENT for table `con_videos`
 --
 ALTER TABLE `con_videos`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `home_slider`
@@ -1695,7 +1697,7 @@ ALTER TABLE `tb_groups_access`
 -- AUTO_INCREMENT for table `tb_logs`
 --
 ALTER TABLE `tb_logs`
-  MODIFY `auditID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=307;
+  MODIFY `auditID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=309;
 
 --
 -- AUTO_INCREMENT for table `tb_menu`
