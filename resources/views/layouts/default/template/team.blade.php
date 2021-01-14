@@ -139,7 +139,6 @@
 
 <script>
 $(document).on('click', '.btn_site', function(){
-    
     var id = $(this).attr('data-id');
     $.ajax({
            type:'POST',

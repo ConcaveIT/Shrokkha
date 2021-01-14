@@ -225,8 +225,6 @@
                                       $from = \Carbon\Carbon::createFromTimestamp(strtotime($data->created_at));
                                       $to = \Carbon\Carbon::now();
                                     @endphp
-                                    {{-- <span>{{ $from->diffInHours($to) }}</span>
-                                    <span>{{ $to->diffInMinutes($from) }}<span> --}}
                                     <span>{{ Carbon\Carbon::createFromTimestamp(strtotime($data->created_at))->diff(\Carbon\Carbon::now())->days }} days ago</span>
                                     <p>{{  Str::limit($data->short_description, $limit = 100, $end = '') }}</p>
                                     <img  class="block_image_big" src="{{ asset('uploads') }}/images/social/{{ $data->image }}" alt="">

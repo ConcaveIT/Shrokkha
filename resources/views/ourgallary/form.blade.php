@@ -28,7 +28,7 @@
 		</ul>		
 		<div class="row">
 	<div class="col-md-12">
-						<fieldset><legend> Gallery</legend>
+						<fieldset><legend> Photos</legend>
 				{!! Form::hidden('id', $row['id']) !!}					
 									  <div class="form-group row  " >
 										<label for="Title" class=" control-label col-md-4 text-left"> Title <span class="asterix"> * </span></label>
@@ -57,13 +57,23 @@
 										 <div class="col-md-2">
 										 	
 										 </div>
-									  </div> {!! Form::hidden('short_description', $row['short_description']) !!}					
+									  </div> 					
+									  <div class="form-group row  " >
+										<label for="Short Description" class=" control-label col-md-4 text-left"> Short Description <span class="asterix"> * </span></label>
+										<div class="col-md-6">
+										  <textarea name='short_description' rows='5' id='short_description' class='form-control form-control-sm '  
+				         required  >{{ $row['short_description'] }}</textarea> 
+										 </div> 
+										 <div class="col-md-2">
+										 	
+										 </div>
+									  </div> 					
 									  <div class="form-group row  " >
 										<label for="Category" class=" control-label col-md-4 text-left"> Category <span class="asterix"> * </span></label>
 										<div class="col-md-6">
 										  
 					<?php $category = explode(',',$row['category']);
-					$category_opt = array( '0' => '--Select Category--' ,  '1' => 'Gallery-1' ,  '2' => 'Gallery-2' ,  '3' => 'Gallery-3' ,  '4' => 'Gallery-4' , ); ?>
+					$category_opt = array( '1' => 'Gallery-1' ,  '2' => 'Gallery-2' ,  '3' => 'Gallery-3' ,  '4' => 'Gallery-4' , ); ?>
 					<select name='category' rows='5' required  class='select2 '  > 
 						<?php 
 						foreach($category_opt as $key=>$val)
