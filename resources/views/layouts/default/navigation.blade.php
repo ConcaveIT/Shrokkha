@@ -21,16 +21,10 @@
                 <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
                     <button class="close-navbar"><i class="ti-close"></i></button>
                     <ul class="nav navbar-nav">
-                        <li class="menu-item-has-children">
-                            <a href="{{url('/')}}">Home</a>
-        
-                        </li>
+                        <li><a href="{{url('/')}}">Home</a></li>
                         <li><a href="{{route('about')}}">About Us</a></li>
                         <li><a href="{{route('what-we-do')}}">What We Do</a></li>
                         <li><a href="{{ route('team') }}">Team</a></li>
-                        
-                        {{-- <li><a href="{{route('donation')}}">Donation</a></li> --}}
-                        
                         <li class="menu-item-has-children">
                             <a href="#">Media</a>
                             <ul class="sub-menu">

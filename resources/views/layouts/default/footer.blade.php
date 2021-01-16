@@ -51,7 +51,7 @@
 						</div>
 	                    <div class="col col-xs-12 col col-md-6">
 							<ul>
-								<li> <a class="custom_footer_size" href="#">| Terms & Condition </a></li>
+								<li> <a class="custom_footer_size" href="#"> <span class="left">|</span> Terms & Condition <span class="right">|</span></a></li>
 								<li> <a class="custom_footer_size" href="#">Privacy & Policy</a></li>
 							</ul>
 						</div>

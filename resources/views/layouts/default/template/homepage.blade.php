@@ -205,10 +205,9 @@
         </div>
     </div>
 	<div class="row">
-		<div class="col-12 col-md-12 col-centered">
+		<div class="col-12 col-xs-12 col-sm-12 col-md-12 col-centered">
 			<div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3500">
 				<div class="carousel-inner">
-
 	                @php
                         $feeds = DB::table('con_social_feed')->where('status', 1)->orderBy('id', 'DESC')->get();
                     @endphp
@@ -250,7 +249,6 @@
 					</a>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
