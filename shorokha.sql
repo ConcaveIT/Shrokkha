@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2021 at 12:43 PM
+-- Generation Time: Jan 16, 2021 at 04:27 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -239,9 +239,9 @@ CREATE TABLE `home_slider` (
 --
 
 INSERT INTO `home_slider` (`id`, `image`, `subtitle_up`, `title`, `subtitle_down`, `short_description`, `btn_text`, `btn_link`, `status`) VALUES
-(1, '1610087620-10109002.jpg', '', 'School Based Shastho  Shurokkha Club', '', '<p><span style=\"line-height: 18pt; font-size: 12pt;\">Shastho Surokkha Foundation organizes school based&nbsp;Shastho Shurokkha Clubs&nbsp;to create awareness among the boys and girls on different health, nutrition and environmental issues. This club constitutes of 30 students, 6 representatives from each class meet once in every week.</span></p>', 'Donate Now', '#', 1),
-(2, '1610087632-55188309.jpg', 'To feed and educate!', 'Your support is  powerful', 'Became a part to change the world', '<p><span style=\"line-height: 18pt;\">Shastho Shurokkha Foundation is a registered non-profit, social change maker, and development organization in Bangladesh. We started our journey in 2006. Initially the Foundation worked in the area of humanitarian responses, education, tree plantation and social awareness campaigns.</span></p>', 'Donate Now', '#', 1),
-(3, '1610086464-92457910.jpg', NULL, 'Universal Health Coverage (UHC)', NULL, '<p><span style=\"line-height: 18pt;\">Prof. Dr. M.H. Millat, a leading global health promotion personality attended the meeting as Chairperson of Health Committee for the Inter-Parliamentary Union (IPU) in October 2018 along with Dr Tedros Adhanom Ghebreyesus Director General of World Health Organization (WHO). IPU assembly accepted his proposal on Universal Health Coverage (UHC) to promote peoples&rsquo; health across the world.</span></p>', 'Donate Now', '#', 1);
+(1, '1610807180-96715504.JPG', '', 'School Based Shastho  Shurokkha Club', '', '<p><span style=\"line-height: 18pt; font-size: 12pt;\">Shastho Surokkha Foundation organizes school based&nbsp;Shastho Shurokkha Clubs&nbsp;to create awareness among the boys and girls on different health, nutrition and environmental issues. This club constitutes of 30 students, 6 representatives from each class meet once in every week.</span></p>', 'Donate Now', '#', 1),
+(2, '1610807161-92870793.JPG', 'To feed and educate!', 'Your support is  powerful', 'Became a part to change the world', '<p><span style=\"line-height: 18pt;\">Shastho Shurokkha Foundation is a registered non-profit, social change maker, and development organization in Bangladesh. We started our journey in 2006. Initially the Foundation worked in the area of humanitarian responses, education, tree plantation and social awareness campaigns.</span></p>', 'Donate Now', '#', 1),
+(3, '1610806800-87702824.jpg', NULL, 'Universal Health Coverage (UHC)', NULL, '<p><span style=\"line-height: 18pt;\">Prof. Dr. M.H. Millat, a leading global health promotion personality attended the meeting as Chairperson of Health Committee for the Inter-Parliamentary Union (IPU) in October 2018 along with Dr Tedros Adhanom Ghebreyesus Director General of World Health Organization (WHO). IPU assembly accepted his proposal on Universal Health Coverage (UHC) to promote peoples&rsquo; health across the world.</span></p>', 'Donate Now', '#', 1);
 
 -- --------------------------------------------------------
 
@@ -1020,7 +1020,10 @@ INSERT INTO `tb_logs` (`auditID`, `ipaddress`, `user_id`, `module`, `task`, `not
 (305, '127.0.0.1', 1, 'ourgallary', NULL, 'Data with ID 7 Has been Updated !', '2021-01-14 04:44:41'),
 (306, '127.0.0.1', 1, 'ourgallary', NULL, 'Data with ID 8 Has been Updated !', '2021-01-14 04:44:56'),
 (307, '127.0.0.1', 1, 'ourteam', NULL, 'Data with ID 1 Has been Updated !', '2021-01-14 11:35:46'),
-(308, '127.0.0.1', 1, 'ourteam', NULL, 'Data with ID 7 Has been Updated !', '2021-01-14 11:38:48');
+(308, '127.0.0.1', 1, 'ourteam', NULL, 'Data with ID 7 Has been Updated !', '2021-01-14 11:38:48'),
+(309, '127.0.0.1', 1, 'homeslider', NULL, 'Data with ID 3 Has been Updated !', '2021-01-16 14:20:00'),
+(310, '127.0.0.1', 1, 'homeslider', NULL, 'Data with ID 2 Has been Updated !', '2021-01-16 14:26:01'),
+(311, '127.0.0.1', 1, 'homeslider', NULL, 'Data with ID 1 Has been Updated !', '2021-01-16 14:26:20');
 
 -- --------------------------------------------------------
 
@@ -1697,7 +1700,7 @@ ALTER TABLE `tb_groups_access`
 -- AUTO_INCREMENT for table `tb_logs`
 --
 ALTER TABLE `tb_logs`
-  MODIFY `auditID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=309;
+  MODIFY `auditID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=312;
 
 --
 -- AUTO_INCREMENT for table `tb_menu`

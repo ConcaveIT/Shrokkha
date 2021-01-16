@@ -3,7 +3,12 @@
 <style>
 .block_image_big {
     height: 262px;
-}    
+} 
+@media (max-width: 767px) {
+    .newspage{
+        height: 240px;
+    }
+}   
 </style>
 <div class="container news_page">
     <div class="row">
@@ -30,7 +35,7 @@
                     @endphp
                     <span>{{ Carbon\Carbon::createFromTimestamp(strtotime($data->created_at))->diff(\Carbon\Carbon::now())->days }} days ago</span>
                     <p>{{  Str::limit($data->short_description, $limit = 100, $end = '') }}</p>
-                    <img  class="block_image_big" src="{{ asset('uploads') }}/images/social/{{ $data->image }}" alt="">
+                    <img id="newspage" class="block_image_big newspage" src="{{ asset('uploads') }}/images/social/{{ $data->image }}" alt="">
                 </a>
             </div>
         </div>

@@ -104,6 +104,10 @@ body {
 }
 
 @media (max-width: 767px) {
+    .newspage{
+        height: 240px;
+    }
+
     body {
         font-size: 14px;
     }
@@ -2565,10 +2569,7 @@ img {
 
 @media screen and (min-width: 992px) {
 
-    .wpo-header-style-2 .navigation .navbar-brand,
-    .wpo-header-style-3 .navigation .navbar-brand {
-        margin-top: 10px;
-    }
+
 
     .wpo-header-style-2 #navbar,
     .wpo-header-style-3 #navbar {
@@ -2597,7 +2598,7 @@ img {
 
     .wpo-header-style-2 #navbar>ul>li>a,
     .wpo-header-style-3 #navbar>ul>li>a {
-        padding: 40px 15px;
+        padding: 29px 15px;
     }
 
     .wpo-header-style-3 #navbar>ul>li>a {
@@ -2639,7 +2640,7 @@ img {
     position: absolute;
     z-index: 120;
     width: 100%;
-    background: rgba(255, 255, 255, .05);
+    background: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -2891,7 +2892,7 @@ img {
 
     .hero-style-1,
     .hero-style-2 {
-        height: 650px;
+        height: 550px;
     }
 }
 
@@ -2923,9 +2924,21 @@ img {
 
 @media (max-width: 767px) {
 
+    
+    
+
+    .section_p_t {
+        padding-top: 20px;
+    }
+    .section_p_b {
+        padding-bottom: 20px;
+    }
+    .wpo-mission-area {
+        padding-bottom: 0px;
+    }   
     .hero-style-1 .slide,
     .hero-style-2 .slide {
-        height: 650px;
+        height: 550px;
     }
 
     .hero .slide .container {
@@ -3351,18 +3364,51 @@ hero-style3
 }
 
 @media (max-width: 767px) {
+    .my_custom_slider .slick-dots {
+        display: none !important;
+    }
+    .main_slider .slide-subtitle p{
+        font-size: 15px;
+    }
+    .slide-caption{
+        padding-top: 0px !important;
+    }
+    #mission_vision, #mission_vision .slide {
+        height: 600px !important;
+    }
+    .block h4 {
+        font-size: 16px;
+    }
+    .block_image {
+        height: 20px !important;
+        width: 20px !important;
+    }
     #carousel .block p{
         display: none;
     }
     .block_image_big {
         height: 120px !important;
+        object-fit: cover;
+        
     }
-
+    #clients .block {
+        height: 180px;
+    }
+    #clients .block_image_big {
+        padding-top: 25px;
+    }
+    
+    
+    #carousel .block h4 {
+        font-size: 16px;
+    }
     #carousel  .block {
-        height: 245px;
+        height: 198px;
     }
 
-
+    .video_section {
+        margin: 0px 0px !important;
+    }
 
     .wpo-site-footer .wpo-upper-footer .col,
     .wpo-site-footer-2 .wpo-upper-footer .col {
@@ -7433,8 +7479,8 @@ padding-top: 50px;
 }
 .video_section{
     background: rgb(0 112 166) !important;
-    padding: 30px 0px !important;
-    margin: 60px 0px !important;
+    padding: 30px 0px;
+    margin: 60px 0px;
 }
  .video_section p, .video_section h4{
     color: #000 !important;
@@ -7539,8 +7585,8 @@ padding-top: 50px;
 }
 
 .block_image{
-    height: 40px !important;
-    width: 40px !important;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;   
     object-fit: cover;
     float: left; 
@@ -7711,7 +7757,7 @@ display: none;
     margin-bottom: 50px;
 }
 .newspage{
-    height: 120px !important;
+    height: 85px;
 }
 .video_page .wpo-about-video-item {
     margin-bottom: 50px;
@@ -7736,14 +7782,14 @@ display: none;
 }
 .photo_filter{
     padding-top:60px;
-    text-align: center;
 }
 
 .photo_filter ul{
-    display: inline-flex;
 }
 .photo_filter ul li{
     margin-right: 15px;
+    text-emphasis: none;
+    float: left;
 }
 
 
@@ -7775,4 +7821,64 @@ display: none;
 .wpo-event-text {
     padding: 15px;
     margin-top: -90px;
+}
+
+
+@media (max-width: 590px) {
+    .icon_design {
+        padding: 40px 20px 50px 20px !important;
+    }
+    .target_Population {
+        padding: 25px 20px 50px 20px !important;
+    }
+    .custom-grid {
+        width: 33.33%; 
+         float: left;
+    }
+}
+
+
+
+@media (max-width: 320px) {
+    .icon_design {
+        padding: 15px 20px 30px 20px !important;
+    }
+    .target_Population {
+        padding: 10px 20px 35px 20px !important;
+    }
+    .custom-grid {
+         width: 50%; 
+         float: left;
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    #newspage{
+        height: 240px !important;
+    }
+    .photo_filter ul li {
+        margin-bottom: 10px;
+    }
+
+    .gallery {
+        margin: 30px 10px !important;
+    }    
+}
+
+.wpo-header-style-2 #navbar>ul>li>a, .wpo-header-style-3 #navbar>ul>li>a {
+    color: #000;
+}
+
+.navbar-brand {
+    padding: 0 !important;
+}
+
+.hero-style-1 .slide, .hero-style-2 .slide {
+    height: 100vh;
+}
+
+.hero-style-1, .hero-style-2 {
+    height: 100vh;
 }

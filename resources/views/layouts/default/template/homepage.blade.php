@@ -14,10 +14,6 @@
                         <div class="slide-subtitle">
                             {!! $data->short_description !!}
                         </div>
-                        <div class="btns">
-                            <a href="causes-single.html" class="theme-btn">{{ $data->btn_text }}</a>
-                            {{-- <a href="about.html" class="theme-btn-s2">Know More</a> --}}
-                        </div>
                     </div>
                 </div>
             </div>
@@ -52,7 +48,7 @@
     </div>
 </div>
 
-<section class="hero hero-style-1 my_custom_slider">
+<section class="hero hero-style-1 my_custom_slider" id="mission_vision">
     <div class="hero-slider">
         @if ($allslider)
         @foreach ($allslider as $data)

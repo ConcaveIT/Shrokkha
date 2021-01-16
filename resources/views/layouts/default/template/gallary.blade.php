@@ -12,12 +12,12 @@ p{color:#fff;text-align:center;}
 .image-thumbnail img{display:block;width:360px;height:200px;object-fit: cover;}
 .gallery:hover .image-thumbnail:not(:hover){filter:blur(2px) grayscale(1);opacity:0.7;transform:scale(0.9);}
 /*        Light Box Styling             */
-.light-box{z-index: 99;position:fixed;top:0;left:0;visibility:hidden;opacity:0;width:100%;height:100%;background-color:rgba(72,73,74,0.7);transition:500ms ease;}
+.light-box{z-index: 9999;position:fixed;top:0;left:0;visibility:hidden;opacity:0;width:100%;height:100%;background-color:rgba(72,73,74,0.7);transition:500ms ease;}
 .light-box:target{visibility:visible;opacity:1;}
-.edges{width:min-content;height:auto;background-color:#ccc;padding:20px;margin:120px auto;box-shadow:0 0 30px #333;}
+.edges{width:50%;height:auto;background-color:#ccc;padding:5px 20px 8px 20px;margin:10px auto;box-shadow:0 0 30px #333;}
 .title{color:#222;fot-size:20px;text-align:center;}
 .inner-image{position:relative;width:100%;height:100%;}
-.inner-image img{max-width:700px;max-height:450px;}
+.inner-image img{width:100%;height:auto;}
 .close-btn, .next-btn{float:right;}
 .close-btn{padding:5px 0;}
 .close-btn, .next-btn, .previous-btn{font-size:16px;}
@@ -33,7 +33,8 @@ inner-image:hover .image-title{opacity:0.8;}
 
 <div class="container photo_filter">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-3"></div>
+        <div class="col-xs-12 col-md-6">
             <ul>
                 <li> <span class="btn btn-info btn_site all" onclick="fiter_gallery(0)">All</span> </li>
                 <li> <span class="btn btn-info btn_site one" onclick="fiter_gallery(1)">Gallery-1</span> </li>
@@ -42,6 +43,8 @@ inner-image:hover .image-title{opacity:0.8;}
                 <li> <span class="btn btn-info btn_site four" onclick="fiter_gallery(4)">Gallery-4</span> </li>
             </ul>
         </div>
+        <div class="col-md-3"></div>
+
     </div>
 </div>
     

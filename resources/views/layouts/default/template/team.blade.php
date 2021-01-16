@@ -41,7 +41,7 @@
             @endphp
             @if ($team)
             @foreach ($team as $data)
-            <div class="col-lg-3 col-md-3 col-sm-6 col-12 custom-grid">
+            <div class="col-lg-3 col-md-3 col-sm-6 col">
                 <div class="wpo-team-wrap mygobernig_body">
                     <div class="wpo-team-img">
                         <img src="{{ asset('uploads') }}/images/team/{{$data->image}}" alt="">
@@ -96,7 +96,7 @@
             @endphp
             @if ($team)
             @foreach ($team as $data)
-            <div class="col-lg-3 col-md-3 col-sm-6 col-12 custom-grid">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                 <div class="wpo-team-wrap mygobernig_body">
                     <div class="wpo-team-img">
                         <img src="{{ asset('uploads') }}/images/team/{{$data->image}}" alt="">

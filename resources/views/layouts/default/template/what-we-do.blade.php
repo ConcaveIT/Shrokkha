@@ -28,7 +28,7 @@
 
 
 
-<section class="hero hero-style-1 my_custom_slider what_page">
+<section class="hero hero-style-1 my_custom_slider what_page" id="mission_vision">
     <div class="hero-slider">
 
         <div class="slide">
